@@ -1,0 +1,51 @@
+1. Containerized Apps on AWS (Compute/Storage/Networking/Monitoring)
+
+Walk me through how you containerized and deployed an app on AWS — which compute service did you use and why (EC2 vs EKS vs ECS)?
+How do you handle persistent storage for containers on AWS (EBS vs EFS vs S3)?
+How did you configure networking for your containerized workloads — VPC, subnets, security groups, load balancers?
+How do you monitor container health and resource usage in production?
+
+Use your Trendify (EC2) and Brain Task App (EKS) projects here — be ready to explain the difference in deployment models between the two.
+2. AWS Infra Provisioning & IaC / Sandbox Environments
+
+How do you use Terraform to provision AWS infrastructure? Walk through your state file management.
+What's the difference between Terraform and Ansible, and when would you use each together?
+How would you set up a sandbox/dev environment that mirrors production but is cost-optimized?
+Have you used Terraform modules? Why are they useful?
+
+Flag: your resume says Terraform + Ansible but doesn't show a sandbox-specific example — have one ready even if improvised (e.g., "spun up a scaled-down EKS cluster with fewer node groups for testing").
+3. AWS Administration / Storage, Compute, Security / Hybrid Cloud / HA-DR
+
+What AWS certifications or admin experience do you have? (Be honest — you don't have AWS Administration certification; pivot to hands-on IAM/EC2/S3 experience.)
+How would you design a Highly Available architecture on AWS (multi-AZ, ASG, ELB)?
+What's your approach to Disaster Recovery — backup strategies, RTO/RPO concepts?
+What is a hybrid cloud setup, and what AWS services support hybrid connectivity (Direct Connect, VPN, Outposts)?
+How do you secure an AWS environment — IAM policies, security groups, least privilege?
+
+This is likely your biggest gap area (HA/DR + hybrid cloud) — worth a focused 30-min review before the interview.
+4. Kubernetes, Docker, CRI-O
+
+Explain the difference between Docker and CRI-O as container runtimes.
+Walk through how you deployed and managed a Kubernetes cluster on EKS.
+How do you manage application lifecycle in K8s — deployments, rolling updates, rollbacks?
+What's the difference between a Pod, Deployment, and ReplicaSet?
+How do you troubleshoot a CrashLoopBackOff pod?
+
+CRI-O is a gap — you've used Docker as the runtime, not CRI-O directly. Be upfront: "I've worked primarily with Docker as the container runtime; I understand CRI-O is a lightweight OCI-compliant alternative used often in OpenShift/K8s environments — happy to get hands-on quickly."
+5. SLA/Monitoring + CI/CD Integration
+
+How did you set up monitoring/alerting to track SLA and service health? Walk through your Prometheus + Grafana + ELK project.
+How do you integrate monitoring into a CI/CD pipeline (e.g., failing a deploy on bad health checks)?
+What metrics do you consider critical for a production service (latency, error rate, saturation)?
+
+This is your strongest area — lead with the Real-Time Log Monitoring project confidently.
+6. Code Quality / Coverage / Quality Gates in CI/CD
+
+How did you use SonarQube in your pipeline? What quality gates did you configure?
+What's the difference between code coverage and code quality?
+How do you fail a CI/CD pipeline based on a quality gate?
+
+Your resume lists SonarQube as a skill but no project shows it explicitly used — prep a specific example or be honest about depth of exposure (e.g., internship exposure vs. hands-on config).
+Quick note on gaps
+Given this JD leans toward hybrid cloud, HA/DR, and CRI-O — areas outside your current project scope — expect the interviewer to probe there. Best strategy: be upfront about what you haven't hands-on used, but bridge with what you do know (e.g., "I haven't used CRI-O directly, but I understand its role as a CRI-compliant runtime and have deep Docker experience I can transfer quickly").
+Want me to turn this into a quick revision doc, or drill into any one section (like HA/DR or Kubernetes internals) with deeper mock Q&A?
