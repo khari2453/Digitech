@@ -1,0 +1,175 @@
+AWS and Infrastructure
+How do you provision AWS infrastructure using Terraform and Ansible, and how do you keep it repeatable across environments?
+
+What is the difference between EC2, EKS, ECR, S3, and IAM in a DevOps setup?
+
+How would you design a sandbox AWS environment for testing without risking production resources?
+
+How do you manage security groups, SSH access, and IAM permissions in a secure AWS environment?
+
+What approach would you use to set up HA and DR for an application on AWS?
+
+CI/CD Pipelines
+Walk me through an end-to-end CI/CD pipeline you built using Jenkins or GitHub Actions.
+
+How do you decide when to use Jenkins, GitHub Actions, or AWS CodePipeline?
+
+How do you integrate build, test, artifact storage, and deployment stages in a pipeline?
+
+What is your strategy for handling rollback in a failed deployment?
+
+How do you version and promote artifacts across dev, test, and production?
+
+Kubernetes and Containers
+Explain the Kubernetes architecture and the role of control plane and worker nodes.
+
+How do Docker and Kubernetes work together in a production deployment?
+
+What are the differences between Docker runtime, containerd, and CRI-O?
+
+How do you troubleshoot a pod that is stuck in CrashLoopBackOff?
+
+How do you manage deployments, services, config maps, and secrets in Kubernetes?
+
+Monitoring and Observability
+How have you used Prometheus and Grafana to monitor system health and uptime?
+
+What metrics would you track to measure SLA and application health?
+
+How do you set up alerting to reduce MTTD and avoid alert fatigue?
+
+What is the difference between logs, metrics, and traces?
+
+How do you use ELK Stack for centralized log monitoring and investigation?
+
+Security and Reliability
+How do you secure a Linux server before deploying workloads on it?
+
+What are your best practices for managing secrets in CI/CD and Kubernetes?
+
+How do you handle infrastructure drift in IaC-managed environments?
+
+What steps do you take to ensure least privilege across AWS and Kubernetes?
+
+How would you respond to a production incident caused by a bad deployment?
+
+DevOps Scenarios
+Describe a time when automation reduced manual effort in your workflow.
+
+How would you design a pipeline that includes code quality, unit tests, and code coverage gates?
+
+What tools would you use to measure code quality and enforce quality gates in CI/CD?
+
+How would you collaborate with application architects to choose the right DevOps tools for a project?
+
+If a deployment succeeds but the application is unhealthy, how would you detect and fix it quickly?
+
+Strong Follow-up Questions
+Can you explain a project where you deployed an application to AWS EKS end to end?
+
+What challenges did you face while automating infrastructure with Terraform?
+
+How did you configure CloudWatch, Prometheus, or Grafana to monitor your systems?
+
+What branch strategy did you use in your Git workflows, and why?
+
+How do you test infrastructure changes before applying them in production?
+
+Would you like me to turn these into mock interview Q&A answers or a question list with expected difficulty levels?
+
+how to add files in github in mannuly
+Completed 2 steps
+You can add files to GitHub manually in two common ways: through the GitHub website or from your computer using Git commands. GitHub’s upload flow lets you drag and drop files into a repository, add a commit message, and commit the change directly on the page.
+
+Method 1: Using GitHub website
+Open your repository on GitHub.
+
+Click Add file.
+
+Select Upload files.
+
+Drag and drop your file or click choose your files.
+
+Add a commit message.
+
+Click Commit changes or Propose changes.
+
+Method 2: Using Git on your computer
+Put the file inside your local repository folder.
+
+Open Terminal or Git Bash.
+
+Run git add . or git add filename.
+
+Run git commit -m "Add file".
+
+Run git push origin main (or your branch name).
+
+If you mean folders
+You can upload a whole folder by dragging and dropping it in the GitHub upload page, or by adding it locally and pushing it with Git.
+
+Simple example
+If you want to upload resume.pdf, open your repo, click Add file → Upload files, drop resume.pdf, write a message like Add resume, then commit it.
+
+Would you like the steps for mobile phone, GitHub website, or VS Code + Git?
+
+how docker image test locally
+Completed 2 steps
+To test a Docker image locally, first build the image, then run a container from it and check whether the app works as expected. A local test usually means verifying the container starts, the ports are exposed correctly, logs are clean, and the app responds on localhost.
+
+Basic steps
+Build the image:
+
+bash
+docker build -t myapp:1.0 .
+Run the container:
+
+bash
+docker run --name myapp-test -p 8080:8080 myapp:1.0
+Open http://localhost:8080 in your browser or use curl to test the app response.
+
+Useful checks
+View logs:
+
+bash
+docker logs myapp-test
+Enter the container:
+
+bash
+docker exec -it myapp-test sh
+Stop and remove the container after testing:
+
+bash
+docker stop myapp-test
+docker rm myapp-test
+These commands help you confirm the container is healthy and behaving correctly before pushing it to a registry.
+
+If your app needs environment variables
+Pass them with -e when running the container:
+
+bash
+docker run -p 8080:8080 -e ENV=dev myapp:1.0
+This is important when your image depends on database URLs, API keys, or feature flags.
+
+Example
+If your app listens on port 3000:
+
+bash
+docker build -t react-app:test .
+docker run -d --name react-test -p 3000:3000 react-app:test
+curl http://localhost:3000
+If the response is correct, your image is working locally.
+
+Would you like a version for Node.js, Python, or React?
+
+Follow-ups
+
+I need a step by step example for a Node.js web application
+
+Please show me how to test a Python application with environment variables
+
+Can you provide a React container testing example for local development
+
+I am using Node.js and would like a simple setup guide for it
+
+Show me how to test a Python app with a database dependency locally
