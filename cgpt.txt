@@ -1,0 +1,392 @@
+1. AWS Infrastructure
+Q1. How do you provision AWS infrastructure?
+
+Expected Answer:
+
+Use Terraform (IaC)
+Create VPC
+Public/Private Subnets
+Internet Gateway
+Route Tables
+Security Groups
+EC2/EKS
+IAM Roles
+S3
+ECR
+Q2. What AWS services have you worked on?
+
+Answer:
+
+EC2
+EKS
+ECR
+S3
+IAM
+CloudWatch
+CodePipeline
+CodeBuild
+CodeDeploy
+Q3. Explain how Terraform provisions infrastructure.
+
+Mention:
+
+provider
+resource
+variable
+output
+terraform init
+terraform plan
+terraform apply
+terraform destroy
+Q4. What is Infrastructure as Code?
+
+Expected Answer:
+Infrastructure is created using code instead of manually creating AWS resources.
+
+Tools:
+
+Terraform
+CloudFormation
+Ansible
+2. Kubernetes
+Q5. Explain Kubernetes architecture.
+
+Draw this:
+
+Master Node
+
+API Server
+
+Scheduler
+
+Controller Manager
+
+etcd
+
+------------------
+
+Worker Node
+
+kubelet
+
+Container Runtime
+
+Pods
+Q6. Difference between Pod, Deployment and ReplicaSet?
+
+Pod
+
+Runs one or more containers
+
+ReplicaSet
+
+Maintains required number of Pods
+
+Deployment
+
+Creates ReplicaSets
+Rolling updates
+Rollbacks
+Q7. How do you deploy an application to EKS?
+
+Expected Flow
+
+GitHub
+
+↓
+
+GitHub Actions
+
+↓
+
+Docker Build
+
+↓
+
+Push to ECR
+
+↓
+
+kubectl apply
+
+↓
+
+Deployment
+
+↓
+
+Service
+
+↓
+
+Ingress
+Q8. How do you scale Kubernetes?
+kubectl scale deployment app --replicas=5
+
+or
+
+HPA
+
+kubectl autoscale deployment
+Q9. Difference between Service and Ingress?
+
+Service
+
+Internal communication
+
+Ingress
+
+External access
+Path based routing
+SSL termination
+Q10. Explain ConfigMap and Secret.
+
+ConfigMap
+
+Non-sensitive data
+
+Secret
+
+Passwords
+API Keys
+Tokens
+3. Docker
+Q11. Difference between Docker Image and Container?
+
+Image
+
+Blueprint
+
+Container
+
+Running instance
+Q12. Explain Docker lifecycle.
+Dockerfile
+
+↓
+
+docker build
+
+↓
+
+Image
+
+↓
+
+docker run
+
+↓
+
+Container
+Q13. Difference between CMD and ENTRYPOINT?
+
+CMD
+
+Default command
+
+ENTRYPOINT
+
+Fixed executable
+4. CI/CD
+Q14. Explain your Jenkins pipeline.
+
+Expected Flow
+
+GitHub
+
+↓
+
+Webhook
+
+↓
+
+Jenkins
+
+↓
+
+Checkout
+
+↓
+
+Maven Build
+
+↓
+
+Unit Test
+
+↓
+
+SonarQube
+
+↓
+
+Docker Build
+
+↓
+
+Docker Push
+
+↓
+
+Deploy to Kubernetes
+Q15. Difference between Jenkins and GitHub Actions?
+
+Jenkins
+
+Self Hosted
+
+GitHub Actions
+
+GitHub Native
+YAML based
+Q16. What are CI and CD?
+
+CI
+
+Build
+Test
+
+CD
+
+Deploy automatically
+5. Monitoring
+Q17. Explain Prometheus architecture.
+
+Components
+
+Prometheus Server
+Exporter
+Alertmanager
+Grafana
+Q18. Difference between Prometheus and CloudWatch?
+
+Prometheus
+
+Kubernetes
+Open source
+
+CloudWatch
+
+AWS monitoring
+Q19. What metrics do you monitor?
+
+CPU
+
+Memory
+
+Disk
+
+Pod Restart
+
+HTTP Errors
+
+Latency
+
+Availability
+
+6. AWS Security
+Q20. Explain IAM.
+
+IAM provides
+
+Users
+Groups
+Roles
+Policies
+Q21. Difference between IAM Role and IAM User?
+
+User
+
+Permanent
+
+Role
+
+Temporary
+Used by EC2
+Used by EKS
+7. High Availability
+Q22. What is HA?
+
+Application continues working even if one server fails.
+
+Example
+
+2 EC2 instances
+
+↓
+
+Application Load Balancer
+
+↓
+
+Auto Scaling
+
+Q23. What is Disaster Recovery?
+
+Recovery after a complete failure.
+
+Examples
+
+Multi-AZ
+Cross Region Backup
+Database Snapshot
+8. DevOps Scenario Questions
+Q24. Docker image build is failing. How will you debug?
+
+Check
+
+Dockerfile
+Build logs
+Disk space
+Network
+Base image
+Build context
+Q25. Kubernetes Pod is in CrashLoopBackOff.
+
+Commands
+
+kubectl get pods
+
+kubectl describe pod
+
+kubectl logs pod-name
+
+kubectl events
+Q26. Jenkins pipeline failed after deployment.
+
+How do you troubleshoot?
+
+Check
+
+Console Output
+Pipeline Stage
+SSH
+Kubernetes Events
+Docker Logs
+Sonar Report
+Q27. One Pod is consuming high CPU.
+
+Steps
+
+kubectl top pod
+kubectl describe pod
+Check application logs
+Scale replicas
+Configure HPA
+Q28. How do you perform rolling updates?
+kubectl set image deployment/app app=image:v2
+
+Rollback
+
+kubectl rollout undo deployment app
+9. Resume-Based Questions
+
+Expect questions directly from your resume, such as:
+
+Explain the Trendify Shopping App CI/CD pipeline from Git commit to deployment.
+How did you deploy the Brain Task App to AWS EKS?
+How did you implement monitoring in the Real-Time Log Monitoring & Alerting System?
+Why did you choose Terraform instead of creating AWS resources manually?
+Explain the GitHub Actions workflow you created during your internship.
+
+For an IBM DevOps interview, focus especially on AWS networking (VPC, subnets, security groups, IAM), Kubernetes, Terraform, CI/CD, Docker, Linux, monitoring, and troubleshooting scenarios. These topics are commonly emphasized for 0–2 years of DevOps experience.
